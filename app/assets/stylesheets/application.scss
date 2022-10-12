@@ -3,8 +3,11 @@
  *= require_self
  */
 @import "materialize/components/color-variables";
-$primary_color: #FF7693 !default;
-$secondary_color: #AE3EDB !default;
+$primary_color: #ff7693 !default;
+$secondary_color: #ae3edb !default;
+
 @import "materialize";
+
 @use 'home';
+
 @import 'resets';
