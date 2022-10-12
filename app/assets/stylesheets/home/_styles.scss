@@ -1,0 +1,76 @@
+@import '../mixins/mixins';
+
+.home__background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(2, 0, 36);
+  background: rgba(2, 0, 36, 1) 0%;
+  z-index: -1;
+}
+
+.home {
+  overflow: hidden;
+
+  &__container {
+    @include flex(column, center, center);
+  }
+
+  &__title {
+    @include flex(column, center, center);
+
+    color: #fff;
+    line-height: 1.75;
+    margin-top: 15vh;
+
+    &__stylized {
+      font-family: 'Aboreto', cursive;
+      font-weight: 700;
+    }
+  }
+
+  &__buttons {
+    margin: 3rem;
+    position: absolute;
+    bottom: 0;
+
+    &__btn {
+      margin: 0 1rem 0 1rem;
+    }
+  }
+
+  &__slogan {
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 5rem;
+  }
+}
+
+.logo {
+  margin: 0;
+  padding: 0;
+  font-size: 12rem;
+  color: #fff;
+  animation: logo 5s infinite running;
+}
+
+@keyframes logo {
+  0% {
+    transform: rotate(0);
+  }
+
+  33% {
+    transform: rotate(-2deg);
+  }
+
+  66% {
+    transform: rotate(2deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
