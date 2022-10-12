@@ -46,6 +46,7 @@ gem 'bootsnap', require: false
 gem 'sassc-rails'
 # CSS framework
 gem 'materialize-sass'
+gem 'material_icons'
 
 # Authentication
 gem 'devise'
