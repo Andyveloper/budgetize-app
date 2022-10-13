@@ -9,5 +9,6 @@ $secondary_color: #ae3edb !default;
 @import "materialize";
 
 @use 'home';
+@use 'resets';
+@use 'devise';
 
-@import 'resets';
