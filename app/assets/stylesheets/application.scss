@@ -7,4 +7,6 @@ $primary_color: #FF7693 !default;
 $secondary_color: #AE3EDB !default;
 @import "materialize";
 @use 'home';
-@import 'resets';
+@use 'resets';
+@use 'devise';
+

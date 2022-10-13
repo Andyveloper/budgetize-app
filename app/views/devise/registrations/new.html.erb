@@ -1,34 +1,45 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :name%><br />
-    <%= f.text_field :name, autofocus: true%><br />
-
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email,  autocomplete: "email" %>
+<section class="auth">
+  <div class="auth__title_container">
+    <i class="material-icons center logo_auth">account_balance_wallet</i>
+    <h2>Sign up</h2>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="field">
+      <%= f.label :name%><br />
+      <%= f.text_field :name, autofocus: true%><br />
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email,  autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+    <div class="form__buttons">
+      <div class="actions">
+        <%= button_tag(type: 'submit', class:"waves-effect waves-light btn home__buttons__btn") do%>
+        <i class="material-icons right">done_all</i>Sign Up</div>
+        <%end%>
+      </div>
+      <p class="form__already_user">Have an account already?</p>
+      <div class="form__already_user">
+        <%= render "devise/shared/links"%>
+      </div>
+    </div>
+  <% end %>
+
+</section>
