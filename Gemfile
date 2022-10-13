@@ -45,8 +45,8 @@ gem 'bootsnap', require: false
 # Use Sass to process CSS
 gem 'sassc-rails'
 # CSS framework
-gem 'materialize-sass'
 gem 'material_icons'
+gem 'materialize-sass'
 
 # Authentication
 gem 'devise'
