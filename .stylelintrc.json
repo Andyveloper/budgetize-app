@@ -13,8 +13,8 @@
           "screen",
           "forward",
           "use",
-          "include",
-          "mixin"
+          "mixin",
+          "include"
         ]
       }
     ],
