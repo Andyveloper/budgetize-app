@@ -1,4 +1,5 @@
 @import '../mixins/mixins';
+
 #new_user {
   width: 80%;
   margin-top: 5rem;
@@ -14,9 +15,12 @@
 
 .auth {
   @include flex(column, center, center);
+
   margin: 1rem;
+
   &__title_container {
     @include flex(column, center, center);
+
     h2 {
       vertical-align: middle;
       margin: 0;
@@ -28,8 +32,10 @@
 .form {
   &__buttons {
     @include flex(column, center, center);
+
     margin: 2rem 0 2rem 0;
   }
+
   &__already_user {
     @include flex(column, center, center);
   }

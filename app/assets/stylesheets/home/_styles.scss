@@ -6,21 +6,24 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(2,0,36,1) 0%;
+  background: rgba(2, 0, 36, 1) 0%;
   z-index: -1;
 }
 
 .home {
   overflow: hidden;
+
   &__container {
     @include flex(column, center, center);
   }
 
   &__title {
     @include flex(column, center, center);
+
     color: #fff;
     line-height: 1.75;
     margin-top: 15vh;
+
     &__stylized {
       font-family: 'Aboreto', cursive;
       font-weight: 700;
@@ -31,10 +34,12 @@
     margin: 3rem;
     position: absolute;
     bottom: 0;
+
     &__btn {
       margin: 0 1rem 0 1rem;
     }
   }
+
   &__slogan {
     color: #fff;
     font-size: 2rem;
@@ -63,7 +68,7 @@
   66% {
     transform: rotate(2deg);
   }
-  
+
   100% {
     transform: rotate(0);
   }
