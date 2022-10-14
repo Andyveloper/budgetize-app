@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_13_223957) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_14_163804) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "expenditure_groups", force: :cascade do |t|
+    t.integer "expenditure_id"
+    t.integer "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "expenditures", force: :cascade do |t|
     t.string "name"
@@ -21,11 +28,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_13_223957) do
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_expenditures_on_user_id"
-  end
-
-  create_table "expenditures_groups", id: false, force: :cascade do |t|
-    t.bigint "group_id", null: false
-    t.bigint "expenditure_id", null: false
   end
 
   create_table "groups", force: :cascade do |t|
