@@ -12,6 +12,8 @@ class ExpendituresController < ApplicationController
   # GET /expenditures/new
   def new
     @expenditure = Expenditure.new
+    @all_groups = Group.all
+    p @all_groups
   end
 
   # GET /expenditures/1/edit
@@ -25,7 +27,7 @@ class ExpendituresController < ApplicationController
 
     respond_to do |format|
       if @expenditure.save
-        format.html { redirect_to expenditure_url(@expenditure), notice: 'Expenditure was successfully created.' }
+        format.html { redirect_to expenditures_url(@expenditure), notice: 'Expenditure was successfully created.' }
         format.json { render :show, status: :created, location: @expenditure }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -50,9 +52,10 @@ class ExpendituresController < ApplicationController
   # DELETE /expenditures/1 or /expenditures/1.json
   def destroy
     @expenditure.destroy
+    params[:id] = nil
 
     respond_to do |format|
-      format.html { redirect_to expenditures_url, notice: 'Expenditure was successfully destroyed.' }
+      format.html { redirect_to expenditures_url, notice: 'Expenditure was successfully deleted.' }
       format.json { head :no_content }
     end
   end
