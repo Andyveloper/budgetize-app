@@ -12,8 +12,8 @@ class ExpendituresController < ApplicationController
   # GET /expenditures/new
   def new
     @expenditure = Expenditure.new
-    @all_groups = Group.all
-    p @all_groups
+    @all_groups = Group.where(user: current_user)
+    @expenditure_group = @expenditure.expenditure_groups.build
   end
 
   # GET /expenditures/1/edit
@@ -24,6 +24,10 @@ class ExpendituresController < ApplicationController
     @user = current_user
     @expenditure = Expenditure.new(expenditure_params)
     @expenditure.user = @user
+
+    params[:groups][:id].each do |group|
+      @expenditure.expenditure_groups.build(group_id: group) unless group.empty?
+    end
 
     respond_to do |format|
       if @expenditure.save
@@ -69,6 +73,6 @@ class ExpendituresController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def expenditure_params
-    params.require(:expenditure).permit(:name, :amount)
+    params.require(:expenditure).permit(:name, :amount, :group)
   end
 end
