@@ -19,7 +19,9 @@ class ExpendituresController < ApplicationController
 
   # POST /expenditures or /expenditures.json
   def create
+    @user = current_user
     @expenditure = Expenditure.new(expenditure_params)
+    @expenditure.user = @user
 
     respond_to do |format|
       if @expenditure.save
