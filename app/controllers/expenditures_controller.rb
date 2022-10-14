@@ -3,7 +3,8 @@ class ExpendituresController < ApplicationController
 
   # GET /expenditures or /expenditures.json
   def index
-    @expenditures = Expenditure.all
+    @expenditures = Expenditure.where(user: current_user).order(created_at: :desc)
+    @groups = Group.where(user: current_user)
   end
 
   # GET /expenditures/1 or /expenditures/1.json
