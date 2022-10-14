@@ -1,4 +1,7 @@
 class Group < ApplicationRecord
   belongs_to :user
-  has_and_belongs_to_many :expenditures
+  has_many :expenditure_groups
+  has_many :expenditures, through: :expenditure_groups
+
+  validates :name, presence: true
 end

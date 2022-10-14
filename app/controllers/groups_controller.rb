@@ -3,7 +3,7 @@ class GroupsController < ApplicationController
 
   # GET /groups or /groups.json
   def index
-    @groups = Group.all
+    @groups = Group.where(user: current_user).order(created_at: :desc)
   end
 
   # GET /groups/1 or /groups/1.json
@@ -50,6 +50,7 @@ class GroupsController < ApplicationController
   # DELETE /groups/1 or /groups/1.json
   def destroy
     @group.destroy
+    params[:id] = nil
 
     respond_to do |format|
       format.html { redirect_to groups_url, notice: 'Category was successfully deleted.' }

@@ -1,27 +1,33 @@
-<%= form_with(model: expenditure) do |form| %>
-  <% if expenditure.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(expenditure.errors.count, "error") %> prohibited this expenditure from being saved:</h2>
-
-      <ul>
-        <% expenditure.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<section>
+  <%= form_with(model: expenditure) do |form| %>
+    <% if expenditure.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(expenditure.errors.count, "error") %> prohibited this expenditure from being saved:</h2>
+        <ul>
+          <% expenditure.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div>
+      <%= form.label :name, style: "display: block" %>
+      <%= form.text_field :name %>
+    </div>
+    <div>
+      <%= form.label :amount, style: "display: block" %>
+      <%= form.number_field :amount %>
+    </div>
+    <%= fields_for(@expenditure_group) do |eg|%>
+      <div class="input-field">
+        <%= collection_select(:groups, :id, @all_groups, :id, :name, {}, {:multiple => true}) %>
+        <%= eg.label 'Categories' %>
+      </div>
+    <% end %>
+    <div>
+      <%= button_tag(type: 'submit', class:"waves-effect waves-light btn new_group_btn") do%>
+        <i class="material-icons right">done_all</i>Submit
+      <%end%>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label :amount, style: "display: block" %>
-    <%= form.number_field :amount %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+</section>

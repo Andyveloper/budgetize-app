@@ -1,3 +1,4 @@
+<section class="container">
 <p style="color: green"><%= notice %></p>
 
 <h1>Expenditures</h1>
@@ -5,10 +6,14 @@
 <div id="expenditures">
   <% @expenditures.each do |expenditure| %>
     <%= render expenditure %>
-    <p>
+    <p class='spacing'>
       <%= link_to "Show this expenditure", expenditure %>
     </p>
   <% end %>
 </div>
-
-<%= link_to "New expenditure", new_expenditure_path %>
+<%= link_to new_expenditure_path, action: 'go' do %>
+    <%= button_tag(type: 'button', class:"waves-effect waves-light btn new_group_btn") do%>
+      <i class="material-icons right">plus_one</i>New Expenditure
+    <%end%>
+  <% end %>
+</section>

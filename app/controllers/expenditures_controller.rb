@@ -3,7 +3,8 @@ class ExpendituresController < ApplicationController
 
   # GET /expenditures or /expenditures.json
   def index
-    @expenditures = Expenditure.all
+    @expenditures = Expenditure.where(user: current_user).order(created_at: :desc)
+    @groups = Group.where(user: current_user)
   end
 
   # GET /expenditures/1 or /expenditures/1.json
@@ -12,6 +13,8 @@ class ExpendituresController < ApplicationController
   # GET /expenditures/new
   def new
     @expenditure = Expenditure.new
+    @all_groups = Group.where(user: current_user)
+    @expenditure_group = @expenditure.expenditure_groups.build
   end
 
   # GET /expenditures/1/edit
@@ -19,11 +22,17 @@ class ExpendituresController < ApplicationController
 
   # POST /expenditures or /expenditures.json
   def create
+    @user = current_user
     @expenditure = Expenditure.new(expenditure_params)
+    @expenditure.user = @user
+
+    params[:groups][:id].each do |group|
+      @expenditure.expenditure_groups.build(group_id: group) unless group.empty?
+    end
 
     respond_to do |format|
       if @expenditure.save
-        format.html { redirect_to expenditure_url(@expenditure), notice: 'Expenditure was successfully created.' }
+        format.html { redirect_to expenditures_url(@expenditure), notice: 'Expenditure was successfully created.' }
         format.json { render :show, status: :created, location: @expenditure }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -48,9 +57,10 @@ class ExpendituresController < ApplicationController
   # DELETE /expenditures/1 or /expenditures/1.json
   def destroy
     @expenditure.destroy
+    params[:id] = nil
 
     respond_to do |format|
-      format.html { redirect_to expenditures_url, notice: 'Expenditure was successfully destroyed.' }
+      format.html { redirect_to expenditures_url, notice: 'Expenditure was successfully deleted.' }
       format.json { head :no_content }
     end
   end
@@ -64,6 +74,6 @@ class ExpendituresController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def expenditure_params
-    params.require(:expenditure).permit(:name, :amount)
+    params.require(:expenditure).permit(:name, :amount, :group)
   end
 end

@@ -1,0 +1,10 @@
+.select-wrapper .caret {
+  bottom: auto !important;
+  margin: 1rem 0 !important;
+}
+
+select[multiple='multiple'] {
+  option {
+    visibility: hidden;
+  }
+}
