@@ -5,16 +5,19 @@
       <span class="title">
         <%= expenditure.name %>
       </span>
-      <p> 
+      <p>
         Amount: <%= number_to_currency(expenditure.amount, unit: '$', separator: '.') %>
       </p>
       <br />
       <p>
-        Category: GROUP NAME GOES HERE
+        Category: 
+        <%expenditure.groups.each do |group|%>
+          <%= group.name %> /  
+        <% end %>
       </p>
       <br />
       <hr class="spacing" />
-         <%=button_to 'Delete Expenditure', expenditure_path(expenditure), {method: :delete, turbo_method: :delete, class:'waves-effect waves-light btn-small new_group_btn'} %> 
+      <%=button_to 'Delete Expenditure', expenditure_path(expenditure), {method: :delete, turbo_method: :delete, class:'waves-effect waves-light btn-small new_group_btn'} %>
       <a href="#!" class="secondary-content">
         <i class="material-icons">
           style
@@ -22,5 +25,4 @@
       </a>
     </li>
   </ul>
-
 </div>
