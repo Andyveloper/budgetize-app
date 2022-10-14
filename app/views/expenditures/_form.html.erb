@@ -1,3 +1,4 @@
+<section>
 <%= form_with(model: expenditure) do |form| %>
   <% if expenditure.errors.any? %>
     <div style="color: red">
@@ -22,6 +23,14 @@
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.label :group, style: "display: block" %>
+    <%= form.number_field :group %>
+  </div>
+
+  <div>
+      <%= button_tag(type: 'submit', class:"waves-effect waves-light btn new_group_btn") do%>
+        <i class="material-icons right">done_all</i>Submit
+      <%end%>
   </div>
 <% end %>
+</section>
