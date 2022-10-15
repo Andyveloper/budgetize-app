@@ -6,6 +6,10 @@ BUDGETIZE
 
 - [BUDGETIZE](https://budgetize-app-andyveloper.herokuapp.com/)
 
+## Short Demo
+
+[![Watch the video](https://www.loom.com/share/71ca36df84614a88901326ce11bd63bb)]
+
 ## Built With
 
 - Ruby
