@@ -1,4 +1,15 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+@import "materialize/components/color-variables";
+$primary_color: #ff7693 !default;
+$secondary_color: #ae3edb !default;
+
 @import "materialize";
 
-@use 'scss/home/';
-@use 'scss/resets/';
+@use 'home';
+@use 'resets';
+@use 'devise';
+@use 'groups';
+@use 'expenditures';

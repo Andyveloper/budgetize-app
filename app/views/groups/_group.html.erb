@@ -1,12 +1,23 @@
 <div id="<%= dom_id group %>">
-  <p>
-    <strong>Name:</strong>
-    <%= group.name %>
-  </p>
+<div class="col s12 m7">
+  <div class="card horizontal hoverable">
+    <div class="card-image">
+    <%if group.icon.empty?%>
+      <%=image_tag('generic.png', {:style => "width:10rem;"})%>
+      <%else%>
+      <%=image_tag(group.icon, {:style => "width:10rem;"})%>
+      <% end %>
 
-  <p>
-    <strong>Icon:</strong>
-    <%= group.icon %>
-  </p>
+    </div>
+    <div class="card-stacked">
+      <div class="card-content card-custom-font">
+        <%=group.name%>
+      </div>
+      <div class="card-action">
+        <%=button_to 'Delete Category', group_path(group), {method: :delete, turbo_method: :delete, class:'waves-effect waves-light btn-small new_group_btn'} %> 
+      </div>
+    </div>
+  </div>
+</div>
 
 </div>

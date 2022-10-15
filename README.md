@@ -1,24 +1,50 @@
-# README
+# Project Name
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+BUDGETIZE
 
-Things you may want to cover:
+## Deployment URL
 
-* Ruby version
+- [BUDGETIZE](https://budgetize-app-andyveloper.herokuapp.com/)
 
-* System dependencies
+## Short Demo
 
-* Configuration
+https://www.loom.com/share/71ca36df84614a88901326ce11bd63bb
 
-* Database creation
+## Built With
 
-* Database initialization
+- Ruby
+- Ruby on Rails
+- PostgreSQL
+- Materialize.CSS
+- SASS
+- JavaScript
 
-* How to run the test suite
+## Getting Started
 
-* Services (job queues, cache servers, search engines, etc.)
+- Clone the project with `https://github.com/Andyveloper/budgetize-app.git`
+- Install the dependencies using `bundle install` command
+- Start the local server using `rails s` command
 
-* Deployment instructions
+### Run tests
 
-* ...
+- Use RSpec for testing `rspec` inside the root directory
+
+## Authors
+
+👤
+
+### Mauricio Cantillo Moreno
+
+- GitHub: [![GitHub Badge](https://img.shields.io/badge/-Andyveloper-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/Andyveloper)
+- Twitter: [![Twitter Badge](https://img.shields.io/badge/-MauroCantillo_-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/MauroCantillo_)
+- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-Mauricio_Cantillo_Moreno-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)](https://www.linkedin.com/in/mauricio-cantillo-moreno/)
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
+
+_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
