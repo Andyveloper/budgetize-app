@@ -8,7 +8,7 @@ BUDGETIZE
 
 ## Short Demo
 
-[![Watch the video](https://www.loom.com/share/71ca36df84614a88901326ce11bd63bb)]
+[![asciicast](https://asciinema.org/a/113463.png)](https://www.loom.com/share/71ca36df84614a88901326ce11bd63bb)
 
 ## Built With
 
